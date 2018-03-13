@@ -1,6 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  namespace: echoservice
   name: echoservice
   labels:
     app: echoservice
