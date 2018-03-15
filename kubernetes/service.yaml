@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: echoservice
+  name: echoservice
+  namespace: echoservice2
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8008
+  selector:
+    app: echoservice
+    provider: manifest
+  type: LoadBalancer
