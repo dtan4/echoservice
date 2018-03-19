@@ -30,6 +30,12 @@ spec:
         image: dtan4/echoservice:latest
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /version
+            port: 8080
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
 ---
 apiVersion: v1
 kind: Service
